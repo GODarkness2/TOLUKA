@@ -1,0 +1,328 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOLUKA</title>
+    <link rel="icon" href="../img/logo tolukaaaa.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .nav-open {
+            top: 0 !important;
+        }
+
+        .nav-open ~ section {
+            margin-top: 200px;
+        }
+
+        /* Animation for scroll effect */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Styles */
+        .menu-icon, .close-icon {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+
+            .menu-icon, .close-icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- component -->
+<body>
+	<nav class="relative px-4 py-4 flex justify-between items-center bg-white">
+        <div class="flex items-center">
+            <img src="../img/logo tolukaaaa.png" alt="Logo TOLUKA" class="h-20">
+            <span class="ml-4 text-3xl font-bold text-yellow-600">TOLUKA</span>
+        </div>
+		<div class="lg:hidden">
+			<button class="navbar-burger flex items-center text-blue-600 p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill="#FFD700" fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/>
+                  </svg>
+                  
+			</button>
+		</div>
+		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="../index.html">Home</a></li>
+			<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg>
+			</li>
+			<li><a class="text-sm text-yellow-600 font-bold" href="../event.html">Kegiatan</a></li>
+
+			<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg>
+			</li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="../produk.html">Produk</a></li>
+			<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg>
+			</li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="../pembuatan.html">Proses Pembuatan</a></li>
+			<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg>
+			</li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="../legalitas.html">Legalitas</a></li>
+		</ul>
+	</nav>
+	<div class="navbar-menu relative z-50 hidden">
+		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+		<nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+			<div class="flex items-center mb-8">
+				<a class="mr-auto text-3xl font-bold leading-none" href="#">
+                    <img src="../img/logo tolukaaaa.png" alt="Logo TOLUKA" class="h-20">
+				</a>
+				<button class="navbar-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                      </svg>
+				</button>
+			</div>
+			<div>
+				<ul>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow-50 hover:text-yellow-600 rounded" href="../index.html">Home</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow-50 hover:text-yellow-600 rounded" href="../event.html">Kegiatan</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow-50 hover:text-yellow-600 rounded" href="../produk.html">Produk</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow-50 hover:text-yellow-600 rounded" href="../pembuatan.html">Proses Pembuatan</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow-50 hover:text-yellow-600 rounded" href="../legalitas.html">Legalitas</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mt-auto">
+				<p class="my-4 text-xs text-center text-gray-400">
+					<span>Copyright © TOLUKA</span>
+				</p>
+			</div>
+		</nav>
+	</div>
+
+    <!-- Konten Berita -->
+    <main class="container mx-auto py-12 px-4">
+        <article class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="../img/KMI Expo.jpg" alt="Gambar Berita" class="w-full h-auto object-cover">
+            <div class="p-6">
+                <h2 class="text-4xl font-bold text-yellow-600 mb-4">Expo Pilmapres</h2>
+                <p class="text-gray-500 text-sm mb-4">Ditulis oleh Admin TOLUKA | 19 Oktober 2024</p>
+                <p class="text-gray-700 text-lg mb-6">
+                    Pada tanggal 24-27 Juli 2024, TOLUKA turut serta dalam kegiatan Expo Pilmapres (Pemilihan Mahasiswa Berprestasi) yang diselenggarakan sebagai bagian dari ajang bergengsi bagi mahasiswa terbaik di Indonesia. Acara ini dihadiri oleh 
+                    para mahasiswa yang berpartisipasi dalam kompetisi Pilmapres, termasuk tokoh muda yang tengah naik daun, Maxwell. Expo ini menjadi momen penting bagi TOLUKA untuk memaparkan produknya di hadapan mahasiswa berprestasi dari berbagai universitas.
+                </p>
+                <p class="text-gray-700 text-lg mb-6">
+                    Expo Pilmapres menghadirkan beragam inovasi dari mahasiswa yang berkompetisi dalam berbagai kategori,
+                     mulai dari teknologi hingga karya sosial. TOLUKA, sebagai salah satu startup lokal yang berfokus pada produk IoT berupa lampu tidur 
+                     dengan dekorasi kain Karawo, mendapat kesempatan untuk memamerkan produknya kepada peserta dan pengunjung expo, termasuk Maxwell, yang dikenal memiliki pengaruh besar di kalangan mahasiswa dan industri teknologi.
+                </p>
+                <p class="text-gray-700 text-lg mb-6">
+                    Selama empat hari kegiatan expo, TOLUKA tidak hanya menampilkan keunggulan teknis dari lampu tidur berbasis IoT-nya, 
+                    namun juga menekankan nilai budaya yang terkandung dalam dekorasi kain Karawo. Produk TOLUKA, 
+                    yang mampu dikendalikan melalui smartphone, menarik minat banyak pengunjung yang tertarik pada inovasi berbasis teknologi dengan sentuhan lokal. Stand TOLUKA selalu dipenuhi oleh pengunjung yang ingin mengetahui lebih lanjut mengenai produk ini dan bagaimana teknologi dapat diintegrasikan dengan elemen budaya.
+                </p>
+                <p class="text-gray-700 text-lg mb-6">
+                    Kehadiran Maxwell dalam kegiatan ini menambah daya tarik tersendiri. Sebagai sosok yang dikenal luas dalam dunia teknologi 
+                    dan prestasi akademis, Maxwell menyempatkan diri untuk mengunjungi beberapa stan, termasuk TOLUKA. Meskipun tidak ada 
+                    interaksi khusus dengan tim TOLUKA, keberadaan Maxwell memberikan aura positif pada expo dan memberikan dorongan motivasi bagi seluruh peserta, termasuk tim TOLUKA.
+                </p>
+                <p class="text-gray-700 text-lg mb-6">
+                    Kegiatan Expo Pilmapres 2024 ini menjadi ajang strategis bagi TOLUKA untuk memperkenalkan produknya kepada mahasiswa berprestasi 
+                    yang berpotensi menjadi agen perubahan di masa depan. Tim TOLUKA berharap bahwa partisipasi dalam expo ini akan membuka lebih banyak peluang kerjasama dan pengembangan produk, 
+                    serta menginspirasi mahasiswa lainnya untuk terus berinovasi.
+                </p>
+                <p class="text-gray-700 text-lg mb-6">
+                    Dengan semangat inovasi dan komitmen untuk menjaga warisan budaya lokal, 
+                    TOLUKA akan terus berupaya memberikan kontribusi nyata melalui teknologi yang dikembangkan, tidak hanya di tingkat regional, 
+                    tetapi juga nasional. Expo ini menjadi salah satu langkah penting dalam perjalanan panjang TOLUKA menuju pengakuan yang lebih luas di kalangan masyarakat.
+                </p>
+            </div>
+        </article>
+    </main>
+
+<!-- Footer -->
+<footer>
+    <!-- Wave effect at the top -->
+    <div class="relative mt-16 bg-yellow-400">
+        <svg class="absolute top-0 w-full h-6 -mt-5 sm:-mt-10 sm:h-16 text-yellow-400" preserveAspectRatio="none" viewBox="0 0 1440 54">
+            <path fill="currentColor" d="M0 22L120 16.7C240 11 480 1.00001 720 0.700012C960 1.00001 1200 11 1320 16.7L1440 22V54H1320C1200 54 960 54 720 54C480 54 240 54 120 54H0V22Z"></path>
+        </svg>
+
+        <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+            <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="sm:col-span-2">
+                    <a href="index.html" aria-label="Go home" title="Company" class="inline-flex items-center">
+                        <!-- Add the circle and adjust logo size -->
+                        <div class="w-16 h-16 bg-white rounded-full flex justify-center items-center">
+                            <img src="img/logo tolukaaaa.png" class="w-12 h-12" alt="Company logo">
+                        </div>
+                        <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Company</span>
+                    </a>
+                    <!-- <div class="mt-6 lg:max-w-sm">
+                        <p class="text-sm text-gray-800">
+                            
+                        </p>
+                        <p class="mt-4 text-sm text-gray-800">
+                            Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        </p>
+                    </div> -->
+                </div>
+                <!-- Other content continues... -->
+
+                <div class="space-y-2 text-sm">
+                    <p class="text-base font-bold tracking-wide text-gray-900">Contacts</p>
+                    <div class="flex">
+                        <p class="mr-1 text-gray-800">Phone:</p>
+                        <a href="https://api.whatsapp.com/send/?phone=6289513157094&text&type=phone_number&app_absent=0"
+                            aria-label="Our phone" title="Our phone"
+                            class="transition-colors duration-300 text-gray-800 ">089513157094</a>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-1 text-gray-800">Email:</p>
+                        <a href="mailto:apollocreativeinnovation@gmail.com" aria-label="Our email" title="Our email"
+                            class="transition-colors duration-300 text-gray-800">apollocreativeinnovation@gmail.com</a>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-1 text-gray-800">Address:</p>
+                        <a href="https://maps.app.goo.gl/h2YBeTEYqEd92zFq5" target="_blank" rel="noopener noreferrer"
+                            aria-label="Our address" title="Our address"
+                            class="transition-colors duration-300 text-gray-800">
+                            Jl. Ampi,Molosipat U
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-base font-bold tracking-wide text-gray-900">Social</span>
+                    <div class="flex items-center mt-1 space-x-3">
+                        <a href="https://www.instagram.com/_toluka?igsh=dXFoa3BlZWQ3aWF2" class="text-gray-500">
+                            <svg viewBox="0 0 30 30" fill="currentColor" class="h-6">
+                                <circle cx="15" cy="15" r="4"></circle>
+                                <path
+                                    d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/people/Tohe-Tuluhu-Karawo/pfbid0k7hesQt1jjb4FCCXgFvhwqtc2dG3gwLA8oEw7G6wpDPCN1rcYDmvwRsUHBCVFwYFl/" class="text-gray-500 ">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                <path
+                                    d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.917,0.001C17.117,7.009,16,7.828,16,9.288V11h4l-1,4h-3v9h5c1.105,0,2-0.895,2-2V2 C24,0.895,23.105,0,22,0z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-500">Follow us on social media</p>
+                </div>
+            </div>
+            <div class="flex flex-col justify-between pt-5 pb-10 border-t border-gray-300 sm:flex-row">
+                <p class="text-sm text-gray-600">
+                    © Copyright 2024 Company. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+
+
+        // Event to toggle menu and icons
+        menuIcon.addEventListener('click', function () {
+            menu.style.display = 'block';
+            menuIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        });
+
+        closeIcon.addEventListener('click', function () {
+            menu.style.display = 'none';
+            menuIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+
+        // Fade-in effect for scroll
+        const fadeIns = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        fadeIns.forEach(fadeIn => {
+            observer.observe(fadeIn);
+        });
+        // Burger menus
+document.addEventListener('DOMContentLoaded', function() {
+    // open
+    const burger = document.querySelectorAll('.navbar-burger');
+    const menu = document.querySelectorAll('.navbar-menu');
+
+    if (burger.length && menu.length) {
+        for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+
+    // close
+    const close = document.querySelectorAll('.navbar-close');
+    const backdrop = document.querySelectorAll('.navbar-backdrop');
+
+    if (close.length) {
+        for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+
+    if (backdrop.length) {
+        for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+});
+    </script>
+</body>
